@@ -4,17 +4,15 @@
   | default @import url()
   |============================
 */
-@import url('./reset.css');
-@import url('./header.css');
 
 :root {
   --primary-white: #ffffff;
   --primary-black: #000000;
-  --accent-yellow: #FF6B08;
-  --secondary-grey: #8C8C8C;
-  --secondary-red: #FF001B;
+  --accent-yellow: #ff6b08;
+  --secondary-grey: #8c8c8c;
+  --secondary-red: #ff001b;
 
-  --primary-font: "Roboto";
+  --primary-font: 'Roboto';
   --primary-font-weight: 500;
 
   font-synthesis: none;
@@ -24,7 +22,9 @@
   -webkit-text-size-adjust: 100%;
 }
 
-*, ::before, ::after {
+*,
+::before,
+::after {
   box-sizing: border-box;
 }
 
