@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,21 +11,32 @@
   
   <script type="module" crossorigin src="/codeMasters/commonHelpers.js"></script>
   <link rel="modulepreload" crossorigin href="/codeMasters/assets/vendor-bdb8a163.js">
-  <link rel="stylesheet" href="/codeMasters/assets/index-93efe476.css">
+  <link rel="stylesheet" href="/codeMasters/assets/index-2cdbbe71.css">
 </head>
+
 <body>
-<header class="header">
-  <nav class="nav">
-    <h2>Header</h2>
-    <p>Hello world</p>
-  </nav>
+  <header class="header">
+  <div class="header__nav-container">
+    <img src="../public/header/svg/film.svg" alt="film-icon" class="header-icon" width="24px" height="24px">
+    <span class="header__page-name">Filmoteka</span>
+    <a href="#" class="page__home current">HOME</a>
+    <a href="#">MY LIBRARY</a>
+  </div>
+  <div class="header__input-container">
+    <input type="text" class="header-input" placeholder="Movie search">
+    <img src="../public/header/svg/search.svg" alt="search-icon" class="search-icon" width="12px" height="12px">
+  </div>
+  <!-- <p class="search__text-error">Search result not successful. Enter the correct movie name and repeat search</p> -->
+
+
 </header>
-<section>
-  <div>
+  <section>
+    <div>
   <h2>Home page</h2>
 </div>
 
-</section>
-
+  </section>
+  
 </body>
+
 </html>
