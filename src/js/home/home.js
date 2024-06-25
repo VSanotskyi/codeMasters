@@ -1,8 +1,17 @@
-import {getAllMovies} from "../services/moviesServices.js";
+import { getAllMovies, getGenres } from '../services/moviesServices.js';
+import { moviesList } from '../../moviesList/moviesList.js';
 
 const getMovies = async () => {
-  const result = await getAllMovies(2)
-  console.log(result)
-}
+  try {
+    const { page, total_page, results } = await getAllMovies(1);
+    const { genres } = await getGenres();
 
-void getMovies()
+    if (results.length > 0) {
+      moviesList(results, genres);
+    }
+  }catch(err) {
+    console.log(err.message);
+  }
+};
+
+void getMovies();
