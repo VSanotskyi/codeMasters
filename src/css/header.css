@@ -1,12 +1,4 @@
 .header {
-  width: 320px;
-  height: 230px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 40px;
-  padding-bottom: 92px;
-  padding-right: 20px;
-  padding-left: 20px;
   font-family: var(--primary-font);
   color: var(--primary-white);
   background-image: url(../public/header/header_mobile_x1-min.jpg);
@@ -18,12 +10,6 @@
   }
 
   @media screen and (min-width: 768px) {
-    width: 768px;
-    padding-top: 40px;
-    padding-bottom: 81px;
-    padding-right: 33px;
-    padding-left: 31px;
-
     background-image: url(../public/header/header_tablet_x1-min.jpg);
 
     @media (min-device-pixel-ratio: 2),
@@ -34,11 +20,6 @@
   }
 
   @media screen and (min-width: 1280px) {
-    width: 1280px;
-    padding-top: 40px;
-    padding-bottom: 81px;
-    padding-right: 32px;
-    padding-left: 32px;
     background-image: url(../public/header/header_laptop_x1-min.jpg);
 
     @media (min-device-pixel-ratio: 2),
@@ -46,6 +27,33 @@
       (min-resolution: 2dppx) {
       background-image: url(../public/header/header_laptop_x2-min.jpg);
     }
+  }
+}
+
+.header__container {
+  width: 320px;
+  height: 230px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 40px;
+  padding-bottom: 92px;
+  padding-right: 20px;
+  padding-left: 20px;
+
+  @media screen and (min-width: 768px) {
+    width: 768px;
+    padding-top: 40px;
+    padding-bottom: 81px;
+    padding-right: 33px;
+    padding-left: 31px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 1280px;
+    padding-top: 40px;
+    padding-bottom: 81px;
+    padding-right: 32px;
+    padding-left: 32px;
   }
 }
 
