@@ -30,6 +30,14 @@
   color: var(--accent-yellow);
 }
 
+.overflowWrap {
+  white-space: nowrap;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  width: 270px;
+}
+
 @media screen and (min-width: 768px) {
   .movies-list {
     gap: 32px;
@@ -42,6 +50,10 @@
   .movies-img {
     height: 455px;
     margin-bottom: 8px;
+  }
+
+  .overflowWrap {
+    width: 326px;
   }
 }
 
@@ -63,5 +75,9 @@
   .movies-title, .movies-text {
     font-size: 20px;
     line-height: 120%;
+  }
+
+  .overflowWrap {
+    width: 384px;
   }
 }
