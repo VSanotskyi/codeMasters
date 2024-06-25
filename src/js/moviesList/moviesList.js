@@ -17,7 +17,7 @@ const markupMovies = (movies, genres) => {
       return `
     <li class="movies-item">
       <img class="movies-img" src="${ defaultUrlImage + poster_path }" alt=""/>
-      <p class="movies-title">${ title }</p>
+      <p class="movies-title overflowWrap">${ title }</p>
       <p class="movies-text overflowWrap">${ genresNameList } | ${ releaseYear }</p>
     </li>
     `;
