@@ -9,7 +9,7 @@ const getMovies = async () => {
     if (results.length > 0) {
       moviesList(results, genres);
     }
-  }catch(err) {
+  } catch (err) {
     console.log(err.message);
   }
 };
