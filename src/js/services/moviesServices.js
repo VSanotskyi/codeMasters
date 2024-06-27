@@ -1,23 +1,33 @@
 import { apiService } from './apiServices.js';
-import { genre, movies, paramsForSearch } from '../constants/urls.js';
-import { PAGE_KEY } from '../constants/storageKey.js';
+import { genre, movies, paramsForSearch, movieDetails } from '../constants/urls.js';
 
 const getAllMovies = async (page = 1) => {
-  const { data } = await apiService(`${movies}?page=${page}`);
+  const { data } = await apiService(`${ movies }?page=${ page }`);
 
   return data;
 };
 
 const getGenres = async () => {
-  const { data } = await apiService(`${genre}`);
+  const { data } = await apiService(`${ genre }`);
 
   return data;
 };
 
-const getMovieBySearch = async movieName => {
-  const { data } = await apiService(`${paramsForSearch}?query=${movieName}`);
+const getMovieBySearch = async (movieName) => {
+  const { data } = await apiService(`${ paramsForSearch }?query=${ movieName }`);
 
   return data;
 };
 
-export { getAllMovies, getGenres, getMovieBySearch };
+const getMovieDetails = async (movieId) => {
+  const { data } = await apiService(`${ movieDetails }/${ movieId }`);
+
+  return data;
+};
+
+export {
+  getAllMovies,
+  getGenres,
+  getMovieBySearch,
+  getMovieDetails,
+};
