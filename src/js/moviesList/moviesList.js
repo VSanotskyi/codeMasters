@@ -6,7 +6,7 @@ const movieListEl = document.querySelector('.movies-list');
 
 const markupMovies = (movies, genres) => {
   movieListEl.innerHTML = movies
-    .map(({ title, poster_path, genre_ids, release_date }) => {
+    .map(({ title, poster_path, genre_ids, release_date, id }) => {
       const genresNameList = genres
         .filter(el => genre_ids.includes(el.id))
         .map(el => el.name)
@@ -15,7 +15,7 @@ const markupMovies = (movies, genres) => {
       const releaseYear = release_date.split('-')[0];
 
       return `
-    <li class="movies-item">
+    <li class="movies-item" data-id="${id}">
       <img class="movies-img" src="${defaultUrlImage + poster_path}" alt=""/>
       <p class="movies-title overflowWrap">${title}</p>
       <p class="movies-text overflowWrap">${genresNameList} | ${releaseYear}</p>
