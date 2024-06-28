@@ -10,22 +10,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
   
   <script type="module" crossorigin src="/codeMasters/commonHelpers.js"></script>
-  <link rel="modulepreload" crossorigin href="/codeMasters/assets/vendor-bdb8a163.js">
-  <link rel="stylesheet" href="/codeMasters/assets/index-91777907.css">
+  <link rel="modulepreload" crossorigin href="/codeMasters/assets/vendor-f9df95ff.js">
+  <link rel="stylesheet" href="/codeMasters/assets/index-e7391e7f.css">
 </head>
 
 <body>
   <header class="header">
   <div class="header__container">
     <div class="header__nav-container">
-      <img src="/codeMasters/assets/film-d73929cd.svg" alt="film-icon" class="header-icon" width="24px" height="24px">
+      <!-- <img src="./public/header/svg/film.svg" alt="film-icon" class="header-icon" width="24px" height="24px"> -->
+      <svg class="header-icon" width="24px" height="24px">
+        <use href="../public/header/svg/sprite-logo.svg#icon-film"></use>
+      </svg>
       <span class="header__page-name">Filmoteka</span>
       <a href="#" class="page__home current">HOME</a>
       <a href="#">MY LIBRARY</a>
     </div>
     <div class="header__input-container">
       <input type="text" class="header-input js__header-input" placeholder="Movie search">
-      <img src="/codeMasters/assets/search-6e0e9f42.svg" alt="search-icon" class="search-icon" width="12" height="12">
+      <svg class="search-icon" width="12" height="12">
+        <use href="../public/header/svg/sprite-logo.svg#icon-search"></use>
+      </svg>
     </div>
   </div>
 
