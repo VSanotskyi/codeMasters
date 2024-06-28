@@ -6,10 +6,13 @@ const pageButtons = document.querySelectorAll('.page');
 const prevButton = document.querySelector('.prev');
 const nextButton = document.querySelector('.next');
 
-let currentPage = Number(localStorage.getItem(PAGE_KEY)) ? Number(localStorage.getItem(PAGE_KEY)) : 1;
-const totalPages = Number(localStorage.getItem(TOTAL_PAGES_KEY)) > 500
-  ? 500
-  : Number(localStorage.getItem(TOTAL_PAGES_KEY));
+let currentPage = Number(localStorage.getItem(PAGE_KEY))
+  ? Number(localStorage.getItem(PAGE_KEY))
+  : 1;
+const totalPages =
+  Number(localStorage.getItem(TOTAL_PAGES_KEY)) > 500
+    ? 500
+    : Number(localStorage.getItem(TOTAL_PAGES_KEY));
 const visiblePage = 5;
 
 const updatePagination = () => {
@@ -41,7 +44,7 @@ const updatePagination = () => {
   nextButton.disabled = currentPage === totalPages;
 };
 
-const handleClickPaginationBtn = async (e) => {
+const handleClickPaginationBtn = async e => {
   if (e.target.classList.contains('page')) {
     currentPage = Number(e.target.textContent);
   }
