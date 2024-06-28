@@ -1,0 +1,20 @@
+.btn-scroll-up {
+  position: fixed;
+  right: 8px;
+  bottom: 85px;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  color: var(--accent-yellow);
+  background-color: inherit;
+}
+
+.btn-scroll-up:focus {
+  color: var(--primary-white);
+  background-color: var(--accent-yellow);
+}
