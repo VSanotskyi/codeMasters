@@ -1,67 +1,87 @@
-import { PAGE_KEY, TOTAL_PAGES_KEY } from '../constants/storageKey.js';
-import { getMovies } from '../moviesList/moviesList.js';
+import renderMovies from '../renderMovies/renderMovies.js';
 
-const paginationContainerEl = document.querySelector('.pagination-container');
-const pageButtons = document.querySelectorAll('.page');
-const prevButton = document.querySelector('.prev');
-const nextButton = document.querySelector('.next');
+const VISIBLE_PAGES = 5;
 
-let currentPage = Number(localStorage.getItem(PAGE_KEY))
-  ? Number(localStorage.getItem(PAGE_KEY))
-  : 1;
-const totalPages =
-  Number(localStorage.getItem(TOTAL_PAGES_KEY)) > 500
-    ? 500
-    : Number(localStorage.getItem(TOTAL_PAGES_KEY));
-const visiblePage = 5;
+const createPagination = (fetchFn, keyword = '') => {
+  let currentPage = 1;
+  let totalPages = 1;
+  const paginationContainerEl = document.getElementById('pagination-container');
 
-const updatePagination = () => {
-  let halfVisible = Math.floor(visiblePage / 2);
-  let startPage = Math.max(currentPage - halfVisible, 1);
-  let endPage = Math.min(currentPage + halfVisible, totalPages);
+  const renderPagination = (totalPage) => {
+    paginationContainerEl.innerHTML = '';
 
-  if (endPage - startPage + 1 < visiblePage) {
-    if (startPage === 1) {
-      endPage = Math.min(startPage + visiblePage - 1, totalPages);
-    } else if (endPage === totalPages) {
-      startPage = Math.max(endPage - visiblePage + 1, 1);
+    const ul = document.createElement('ul');
+    ul.classList.add('pagination-list');
+
+    const prevLi = document.createElement('li');
+    const prevBtn = document.createElement('button');
+    prevBtn.innerHTML = '&#8592';
+    prevBtn.classList.add('pagination-btn');
+    prevBtn.disabled = currentPage === 1;
+    prevBtn.addEventListener('click', () => {
+      if (currentPage > 1) {
+        void loadPage(currentPage - 1);
+      }
+    });
+    prevLi.appendChild(prevBtn);
+    ul.appendChild(prevLi);
+
+    let startPage = Math.max(1, currentPage - Math.floor(VISIBLE_PAGES / 2));
+    let endPage = Math.min(totalPage, currentPage + Math.floor(VISIBLE_PAGES / 2));
+
+    if (currentPage - 1 < Math.floor(VISIBLE_PAGES / 2)) {
+      endPage = Math.min(totalPages, VISIBLE_PAGES);
     }
-  }
 
-  pageButtons.forEach((btn, i) => {
-    const pageNumber = startPage + i;
-
-    btn.textContent = String(pageNumber);
-
-    if (pageNumber === currentPage) {
-      btn.classList.add('pagination-current');
-    } else {
-      btn.classList.remove('pagination-current');
+    if (totalPages - currentPage < Math.floor(VISIBLE_PAGES / 2)) {
+      startPage = Math.max(1, totalPages - VISIBLE_PAGES + 1);
     }
-  });
 
-  prevButton.disabled = currentPage === 1;
-  nextButton.disabled = currentPage === totalPages;
+    for (let i = startPage; i <= endPage; i += 1) {
+      const li = document.createElement('li');
+      const btn = document.createElement('button');
+      btn.classList.add('pagination-btn');
+      btn.innerText = i.toString();
+      btn.classList.toggle('pagination-current', i === currentPage);
+      btn.addEventListener('click', () => {
+        if (currentPage !== i) {
+          void loadPage(i);
+        }
+      });
+
+      li.appendChild(btn);
+      ul.appendChild(li);
+    }
+
+    const nextLi = document.createElement('li');
+    const nextBtn = document.createElement('button');
+    nextBtn.innerHTML = '&#8594';
+    nextBtn.classList.add('pagination-btn');
+    nextBtn.disabled = currentPage === totalPage;
+    nextBtn.addEventListener('click', () => {
+      if (currentPage < totalPage) {
+        void loadPage(currentPage + 1);
+      }
+    });
+    nextLi.appendChild(nextBtn);
+    ul.appendChild(nextLi);
+
+    paginationContainerEl.appendChild(ul);
+  };
+
+  const loadPage = async (page) => {
+    currentPage = page;
+
+    const { total_pages, results } = await fetchFn(page, keyword);
+
+    if (results) {
+      renderMovies(results);
+      totalPages = total_pages > 500 ? 500 : total_pages;
+      renderPagination(totalPages);
+    }
+  };
+
+  void loadPage(1);
 };
 
-const handleClickPaginationBtn = async e => {
-  if (e.target.classList.contains('page')) {
-    currentPage = Number(e.target.textContent);
-  }
-
-  if (e.target.classList.contains('prev')) {
-    currentPage -= 1;
-  }
-
-  if (e.target.classList.contains('next')) {
-    currentPage += 1;
-  }
-
-  void getMovies(currentPage);
-
-  updatePagination();
-};
-
-updatePagination();
-
-paginationContainerEl.addEventListener('click', handleClickPaginationBtn);
+export default createPagination;

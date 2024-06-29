@@ -1,5 +1,5 @@
-import { getMovieDetails } from '../services/moviesServices.js';
-import { movieDetailsModalMarkup } from '../movieDetailsModalMarkup/movieDetailsModalMarkup.js';
+import moviesServices from '../services/moviesServices.js';
+import renderMovieDetails from '../renderMovieDetails/renderMovieDetails.js';
 
 const moviesListEl = document.querySelector('.movies-list');
 const backdropEl = document.querySelector('.backdrop');
@@ -16,13 +16,13 @@ const handleOpenModal = async (e) => {
 
   try {
     // get movies details
-    const movieDetails = await getMovieDetails(movieId);
+    const movieDetails = await moviesServices.getMovieDetails(movieId);
 
     // remove class hidden
     backdropEl.classList.remove('is-hidden');
 
     // render movies details
-    movieDetailsModalMarkup(movieDetails);
+    renderMovieDetails(movieDetails);
 
     // add event listener for esc
     window.addEventListener('keydown', handleCloseModalEsc);

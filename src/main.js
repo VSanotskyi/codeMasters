@@ -1,5 +1,6 @@
-import './js/header.js'
-import './js/home/home.js'
-import './js/pagination/pagination.js'
-import './js/movieDetailsModal/movieDetailsModal.js'
-import './js/btnScrollUp/btnScrollUp.js'
+import './js/header/header.js';
+import './js/genres/genres.js';
+import './js/home/home.js';
+import './js/pagination/pagination.js';
+import './js/movieDetails/movieDetails.js';
+import './js/btnScrollUp/btnScrollUp.js';

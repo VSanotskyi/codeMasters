@@ -1,3 +1,8 @@
-import { getMovies } from '../moviesList/moviesList.js';
+import createPagination from '../pagination/pagination.js';
+import movies from '../movies/movies.js';
 
-void getMovies();
+createPagination(movies.getAllMovies);
+
+
+
+

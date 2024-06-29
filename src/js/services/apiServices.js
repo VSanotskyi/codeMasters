@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-import { baseURL, api_key } from '../constants/urls.js';
+import urls from '../constants/urls.js';
 
 const params = {
-  api_key,
+  api_key: urls.api_key,
 };
 
-const apiService = axios.create({ baseURL, params });
+const apiService = axios.create({ baseURL: urls.baseURL, params });
 
-export { apiService };
+export default apiService;

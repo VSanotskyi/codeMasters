@@ -1,33 +1,33 @@
-import { apiService } from './apiServices.js';
-import { genre, movies, paramsForSearch, movieDetails } from '../constants/urls.js';
+import apiService from './apiServices.js';
+import urls from '../constants/urls.js';
 
 const getAllMovies = async (page = 1) => {
-  const { data } = await apiService(`${ movies }?page=${ page }`);
+  const { data } = await apiService(`${ urls.moviesEndPoint }?page=${ page }`);
 
   return data;
 };
 
 const getGenres = async () => {
-  const { data } = await apiService(`${ genre }`);
+  const { data } = await apiService(`${ urls.genreEndPoint }`);
 
   return data;
 };
 
-const getMovieBySearch = async (movieName) => {
-  const { data } = await apiService(`${ paramsForSearch }?query=${ movieName }`);
+const getMovieByKeyword = async (page, keyword) => {
+  const { data } = await apiService(`${ urls.searchEndPoint }?page=${ page }&query=${ keyword }`);
 
   return data;
 };
 
 const getMovieDetails = async (movieId) => {
-  const { data } = await apiService(`${ movieDetails }/${ movieId }`);
+  const { data } = await apiService(`${ urls.movieDetailsEndPoint }/${ movieId }`);
 
   return data;
 };
 
-export {
+export default {
   getAllMovies,
   getGenres,
-  getMovieBySearch,
+  getMovieByKeyword,
   getMovieDetails,
 };
