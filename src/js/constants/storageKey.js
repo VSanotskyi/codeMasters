@@ -1,7 +1,5 @@
-const PAGE_KEY = 'page';
-const TOTAL_PAGES_KEY = 'total_pages';
+const GENRES_KEY = 'page';
 
-export {
-  PAGE_KEY,
-  TOTAL_PAGES_KEY,
+export default {
+  GENRES_KEY,
 };

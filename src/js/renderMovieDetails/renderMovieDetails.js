@@ -1,8 +1,8 @@
-import { defaultUrlImage } from '../constants/urls.js';
+import urls from '../constants/urls.js';
 
 const modalWrapperEl = document.querySelector('.modal-wrapper');
 
-const movieDetailsModalMarkup = (movieDetails) => {
+const renderMovieDetails = (movieDetails) => {
   const {
     poster_path,
     original_title,
@@ -14,9 +14,9 @@ const movieDetailsModalMarkup = (movieDetails) => {
   } = movieDetails;
 
   const normalizeGenres = genres.map(({ name }) => name).join(' ');
-  const normalizeImgUrl = defaultUrlImage + poster_path;
+  const normalizeImgUrl = urls.defaultUrlImage + poster_path;
   const normalizeOriginalTitle = original_title.toUpperCase();
-  const normalizePopularity = Math.round(popularity)
+  const normalizePopularity = Math.round(popularity);
 
   modalWrapperEl.innerHTML = `
     <img class="modal-img" src="${ normalizeImgUrl }" alt="">
@@ -52,6 +52,4 @@ const movieDetailsModalMarkup = (movieDetails) => {
   `;
 };
 
-export {
-  movieDetailsModalMarkup,
-};
+export default renderMovieDetails;

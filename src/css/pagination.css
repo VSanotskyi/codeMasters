@@ -1,12 +1,8 @@
-.pagination-container {
+.pagination-list {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 5px;
-  width: 280px;
-}
-
-.pagination-list {
-
 }
 
 .pagination-btn {
