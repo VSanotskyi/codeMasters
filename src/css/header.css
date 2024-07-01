@@ -1,26 +1,26 @@
 .header {
   font-family: var(--primary-font);
   color: var(--primary-white);
-  background-image: url(../public/header/header_mobile_x1-min.jpg);
+  background-image: url(./public/header/header_mobile_x1-min.jpg);
   background-size: cover;
   @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
-    background-image: url(../public/header/header_mobile_x2-min.jpg);
+    background-image: url(./public/header/header_mobile_x2-min.jpg);
   }
 
   @media screen and (min-width: 768px) {
-    background-image: url(../public/header/header_tablet_x1-min.jpg);
+    background-image: url(./public/header/header_tablet_x1-min.jpg);
 
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
-      background-image: url(../public/header/header_tablet_x2-min.jpg);
+      background-image: url(./public/header/header_tablet_x2-min.jpg);
     }
   }
 
   @media screen and (min-width: 1280px) {
-    background-image: url(../public/header/header_laptop_x1-min.jpg);
+    background-image: url(./public/header/header_laptop_x1-min.jpg);
 
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
