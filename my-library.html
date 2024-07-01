@@ -2,48 +2,42 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Movies</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Library</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
   
   <script type="module" crossorigin src="/codeMasters/assets/vendor-cab2c1cb.js"></script>
   <script type="module" crossorigin src="/codeMasters/assets/main-0a686450.js"></script>
-  <link rel="stylesheet" href="/codeMasters/assets/index-cbac7d29.css">
+  <link rel="stylesheet" href="/codeMasters/assets/my-library-ad2487ac.css">
 </head>
 
 <body>
-<header class="header">
+  <header class="header">
   <div class="header__container">
     <div class="header__nav-container">
       <svg class="header-icon" width="24px" height="24px">
         <use href="../public/header/svg/sprite-logo.svg#icon-film"></use>
       </svg>
       <span class="header__page-name">Filmoteka</span>
-      <a href="../index.html" class="page__home current">HOME</a>
-      <a href="../my-library.html">MY LIBRARY</a>
+      <a href="../index.html" class="page__home">HOME</a>
+      <a href="../my-library.html" class="page__my-library current">MY LIBRARY</a>
     </div>
-    <div class="header__input-container">
-      <input type="text" class="header-input js__header-input" placeholder="Movie search">
-      <svg class="search-icon" width="12" height="12">
-        <use href="../public/header/svg/sprite-logo.svg#icon-search"></use>
-      </svg>
+    <div class="header__button-container">
+      <button class="header-button">WATCHED</button>
+      <button class="header-button">QUEUE</button>
     </div>
   </div>
-
-  <!-- <p class="search__text-error">Search result not successful. Enter the correct movie name and repeat search</p> -->
-
-
 </header>
-<section class="container">
-  <ul class="movies-list">
+  <section class="container">
+    <ul class="movies-list">
 </ul>
 
-</section>
-<div id="pagination-container"></div>
-<div class="backdrop js-backdrop is-hidden">
+  </section>
+  <div id="pagination-container"></div>
+  <div class="backdrop js-backdrop is-hidden">
   <div class="modal">
     <div class="modal-wrapper"></div>
     <button type="button" class="modal-btn-close">
@@ -53,18 +47,18 @@
     </button>
   </div>
 </div>
-<button class="btn-scroll-up">
+  <button class="btn-scroll-up">
   <svg class="icon icon-arrow-up" width="30" height="30">
     <use xlink:href="/codeMasters/assets/symbol-defs-fc169b0a.svg#icon-arrow-up"></use>
   </svg>
 </button>
-<div class="loader-backdrop is-hidden">
+  <div class="loader-backdrop is-hidden">
   <div class="loader"></div>
 </div>
 
 
 
-
+  
 </body>
 
 </html>
