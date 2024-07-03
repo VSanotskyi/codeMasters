@@ -6,12 +6,12 @@ import"./assets/modulepreload-polyfill-3cfb730f.js";import{a as B,d as I}from"./
         </li>
       `}).join("")},p=5,k=(e,s="")=>{let t=1,o=1;const m=document.getElementById("pagination-container"),E=n=>{m.innerHTML="";const a=document.createElement("ul");a.classList.add("pagination-list");const i=document.createElement("li");i.innerHTML=`<button class="pagination-btn">
   <svg class="icon icon-arrow-left" width="16" height="16">
-  <use href="../img/svg/symbol-defs.svg#icon-arrow-left"></use>
-  </svg>'
+  <use href="./img/svg/symbol-defs.svg#icon-arrow-left"></use>
+  </svg>
 </button>`;const l=i.children[0];l.disabled=t===1,l.addEventListener("click",()=>{t>1&&c(t-1)}),a.appendChild(i);let y=Math.max(1,t-Math.floor(p/2)),f=Math.min(n,t+Math.floor(p/2));t-1<Math.floor(p/2)&&(f=Math.min(o,p)),o-t<Math.floor(p/2)&&(y=Math.max(1,o-p+1));for(let g=y;g<=f;g+=1){const x=document.createElement("li"),h=document.createElement("button");h.classList.add("pagination-btn"),h.innerText=g.toString(),h.classList.toggle("pagination-current",g===t),h.addEventListener("click",()=>{t!==g&&c(g)}),x.appendChild(h),a.appendChild(x)}const S=document.createElement("li");S.innerHTML=`<button class="pagination-btn">
   <svg class="icon icon-arrow-left" width="16" height="16">
-  <use href="../img/svg/symbol-defs.svg#icon-arrow-right"></use>
-  </svg>'
+  <use href="./img/svg/symbol-defs.svg#icon-arrow-right"></use>
+  </svg>
 </button>`;const _=S.children[0];_.disabled=t===n,_.addEventListener("click",()=>{t<n&&c(t+1)}),a.appendChild(S),m.appendChild(a)},c=async n=>{t=n;const{total_pages:a,results:i}=await e(n,s);i&&(oe(i),o=a>500?500:a,E(o))};c(1)},ae=document.querySelector(".js__header-input"),ne=e=>{const s=e.target.value.trim();s.length===0?k(C.getAllMovies):k(F.getMovieByKeyword,s)};ae.addEventListener("input",I(ne,1e3));const ie=async()=>{try{const{genres:e}=await w.getGenres();localStorage.setItem(r.GENRES_KEY,JSON.stringify(e))}catch(e){console.log(e.message)}};ie();k(C.getAllMovies);const le=document.querySelector(".modal-wrapper"),ce=e=>{const{poster_path:s,original_title:t,genres:o,vote_average:m,vote_count:E,popularity:c,overview:n}=e,a=o.map(({name:f})=>f).join(" "),i=d.defaultUrlImage+s,l=t.toUpperCase(),y=Math.round(c);le.innerHTML=`
     <img class="modal-img" src="${i}" alt="">
     <div class="modal-text-content-wrapper">
