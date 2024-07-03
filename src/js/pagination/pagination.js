@@ -15,8 +15,8 @@ const createPagination = (fetchFn, keyword = '') => {
     const prevLi = document.createElement('li');
     prevLi.innerHTML = `<button class="pagination-btn">
   <svg class="icon icon-arrow-left" width="16" height="16">
-  <use href="../img/svg/symbol-defs.svg#icon-arrow-left"></use>
-  </svg>'
+  <use href="./img/svg/symbol-defs.svg#icon-arrow-left"></use>
+  </svg>
 </button>`;
 
     const prevBtn = prevLi.children[0];
@@ -66,8 +66,8 @@ const createPagination = (fetchFn, keyword = '') => {
     const nextLi = document.createElement('li');
     nextLi.innerHTML = `<button class="pagination-btn">
   <svg class="icon icon-arrow-left" width="16" height="16">
-  <use href="../img/svg/symbol-defs.svg#icon-arrow-right"></use>
-  </svg>'
+  <use href="./img/svg/symbol-defs.svg#icon-arrow-right"></use>
+  </svg>
 </button>`;
     // const nextBtn = document.createElement('button');
     // nextBtn.innerHTML =
