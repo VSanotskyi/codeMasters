@@ -18,7 +18,7 @@ const renderMovies = (movies) => {
 
       return `
         <li class="movies-item" data-id="${ id }">
-          <img class="movies-img" src="${ imgPath }" alt="${ title }"/>
+          <img class="movies-img" src="${ imgPath }" alt="${ title }" loading="lazy"/>
           <p class="movies-title overflowWrap">${ title }</p>
           <p class="movies-text overflowWrap">${ genresNameList } | ${ releaseYear }</p>
         </li>

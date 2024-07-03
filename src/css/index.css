@@ -1,9 +1,10 @@
 @import url('./reset.css');
 @import url('./styles.css');
 @import url('./header.css');
-@import url('./home.css');
+@import url('movies.css');
 @import url('./pagination.css');
 @import url('./movieDetailsModal.css');
 @import url('./btnScrollUp.css');
 @import url('./loader.css');
+@import url('./footer.css');
 

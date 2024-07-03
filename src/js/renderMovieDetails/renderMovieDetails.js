@@ -45,8 +45,8 @@ const renderMovieDetails = (movieDetails) => {
         ${ overview }
       </p>
       <div class="modal-btn-wrapper">
-        <button type="button" class="modal-btn">Add to watched</button>
-        <button type="button" class="modal-btn">Add to queue</button>
+        <button type="button" class="modal-btn modal-btn-watched">Add to watched</button>
+        <button type="button" class="modal-btn modal-btn-queue">Add to queue</button>
       </div>
     </div>
   `;

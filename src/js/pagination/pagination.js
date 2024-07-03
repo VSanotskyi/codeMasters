@@ -15,7 +15,7 @@ const createPagination = (fetchFn, keyword = '') => {
 
     const prevLi = document.createElement('li');
     const prevBtn = document.createElement('button');
-    prevBtn.innerHTML = '&#8592';
+    prevBtn.innerHTML = '<svg class="icon icon-arrow-left" width="16" height="16"><use href="./img/svg/symbol-defs.svg#icon-arrow-left"></use></svg>';
     prevBtn.classList.add('pagination-btn');
     prevBtn.disabled = currentPage === 1;
     prevBtn.addEventListener('click', () => {
@@ -55,7 +55,7 @@ const createPagination = (fetchFn, keyword = '') => {
 
     const nextLi = document.createElement('li');
     const nextBtn = document.createElement('button');
-    nextBtn.innerHTML = '&#8594';
+    nextBtn.innerHTML = '<svg class="icon icon-arrow-left" width="16" height="16"><use href="./img/svg/symbol-defs.svg#icon-arrow-right"></use></svg>';
     nextBtn.classList.add('pagination-btn');
     nextBtn.disabled = currentPage === totalPage;
     nextBtn.addEventListener('click', () => {
