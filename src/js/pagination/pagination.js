@@ -7,27 +7,37 @@ const createPagination = (fetchFn, keyword = '') => {
   let totalPages = 1;
   const paginationContainerEl = document.getElementById('pagination-container');
 
-  const renderPagination = (totalPage) => {
+  const renderPagination = totalPage => {
     paginationContainerEl.innerHTML = '';
 
     const ul = document.createElement('ul');
     ul.classList.add('pagination-list');
-
     const prevLi = document.createElement('li');
-    const prevBtn = document.createElement('button');
-    prevBtn.innerHTML = '<svg class="icon icon-arrow-left" width="16" height="16"><use href="/img/svg/symbol-defs.svg#icon-arrow-left"></use></svg>';
-    prevBtn.classList.add('pagination-btn');
+    prevLi.innerHTML = `<button class="pagination-btn">
+  <svg class="icon icon-arrow-left" width="16" height="16">
+  <use href="../img/svg/symbol-defs.svg#icon-arrow-left"></use>
+  </svg>'
+</button>`;
+
+    const prevBtn = prevLi.children[0];
+
+    // const prevBtn = document.createElement('button');
+    // prevBtn.innerHTML = '<svg class="icon icon-arrow-left" width="16" height="16"><use href="/img/svg/symbol-defs.svg#icon-arrow-left"></use></svg>';
+    // prevBtn.classList.add('pagination-btn');
     prevBtn.disabled = currentPage === 1;
     prevBtn.addEventListener('click', () => {
       if (currentPage > 1) {
         void loadPage(currentPage - 1);
       }
     });
-    prevLi.appendChild(prevBtn);
+    // prevLi.appendChild(prevBtn);
     ul.appendChild(prevLi);
 
     let startPage = Math.max(1, currentPage - Math.floor(VISIBLE_PAGES / 2));
-    let endPage = Math.min(totalPage, currentPage + Math.floor(VISIBLE_PAGES / 2));
+    let endPage = Math.min(
+      totalPage,
+      currentPage + Math.floor(VISIBLE_PAGES / 2)
+    );
 
     if (currentPage - 1 < Math.floor(VISIBLE_PAGES / 2)) {
       endPage = Math.min(totalPages, VISIBLE_PAGES);
@@ -54,22 +64,29 @@ const createPagination = (fetchFn, keyword = '') => {
     }
 
     const nextLi = document.createElement('li');
-    const nextBtn = document.createElement('button');
-    nextBtn.innerHTML = '<svg class="icon icon-arrow-left" width="16" height="16"><use href="/img/svg/symbol-defs.svg#icon-arrow-right"></use></svg>';
-    nextBtn.classList.add('pagination-btn');
+    nextLi.innerHTML = `<button class="pagination-btn">
+  <svg class="icon icon-arrow-left" width="16" height="16">
+  <use href="../img/svg/symbol-defs.svg#icon-arrow-right"></use>
+  </svg>'
+</button>`;
+    // const nextBtn = document.createElement('button');
+    // nextBtn.innerHTML =
+    //   '<svg class="icon icon-arrow-left" width="16" height="16"><use href="/img/svg/symbol-defs.svg#icon-arrow-right"></use></svg>';
+    // nextBtn.classList.add('pagination-btn');
+    const nextBtn = nextLi.children[0];
     nextBtn.disabled = currentPage === totalPage;
     nextBtn.addEventListener('click', () => {
       if (currentPage < totalPage) {
         void loadPage(currentPage + 1);
       }
     });
-    nextLi.appendChild(nextBtn);
+    // nextLi.appendChild(nextBtn);
     ul.appendChild(nextLi);
 
     paginationContainerEl.appendChild(ul);
   };
 
-  const loadPage = async (page) => {
+  const loadPage = async page => {
     currentPage = page;
 
     const { total_pages, results } = await fetchFn(page, keyword);
