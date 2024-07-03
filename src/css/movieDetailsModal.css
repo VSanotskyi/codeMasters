@@ -49,11 +49,6 @@
   background-color: inherit;
 }
 
-.icon {
-  stroke: currentColor;
-  fill: currentColor;
-}
-
 .modal-img {
   border-radius: 5px;
   width: 240px;
@@ -125,7 +120,7 @@
   color: var(--primary-black);
 }
 
-.modal-btn:hover {
+.modal-btn.active {
   background: #ff6b01;
 }
 
