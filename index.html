@@ -12,19 +12,21 @@
   <script type="module" crossorigin src="/codeMasters/commonHelpers.js"></script>
   <link rel="modulepreload" crossorigin href="/codeMasters/assets/modulepreload-polyfill-3cfb730f.js">
   <link rel="modulepreload" crossorigin href="/codeMasters/assets/vendor-cab2c1cb.js">
-  <link rel="stylesheet" href="/codeMasters/assets/index-26b4d38f.css">
+  <link rel="stylesheet" href="/codeMasters/assets/index-a0f5f8dc.css">
 </head>
 
 <body>
 <header class="header">
   <div class="header__container">
     <div class="header__nav-container">
-      <svg class="header-icon" width="24px" height="24px">
-        <use href="/codeMasters/assets/symbol-defs-77600034.svg#icon-film"></use>
-      </svg>
+      <a href="./">
+        <svg class="header-icon" width="24px" height="24px">
+          <use href="/codeMasters/assets/symbol-defs-77600034.svg#icon-film"></use>
+        </svg>
+      </a>
       <span class="header__page-name">Filmoteka</span>
-      <a href="./index.html" class="page__home current">HOME</a>
-      <a href="./my-library.html">MY LIBRARY</a>
+      <a href="./" class="nav-link page__home current">Home</a>
+      <a href="./my-library.html" class="nav-link">My library</a>
     </div>
     <div class="header__input-container">
       <input type="text" class="header-input js__header-input" placeholder="Movie search">
