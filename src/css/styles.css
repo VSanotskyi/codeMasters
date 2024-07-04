@@ -12,7 +12,7 @@
   --secondary-grey: #8c8c8c;
   --secondary-red: #ff001b;
 
-  --primary-font: 'Roboto';
+  --primary-font: 'Roboto', sans-serif;
   --primary-font-weight: 500;
 
   font-synthesis: none;
@@ -51,10 +51,6 @@ body {
 }
 
 .icon {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  stroke-width: 0;
   stroke: currentColor;
   fill: currentColor;
 }
