@@ -1,6 +1,7 @@
 .header {
   font-family: var(--primary-font), sans-serif;
   color: var(--primary-white);
+  font-weight: 500;
   background-image: url(../img/my-library-header/my-library-bcg-img-mobil-1x.jpg);
   background-size: cover;
   @media (min-device-pixel-ratio: 2),
@@ -71,6 +72,11 @@
   }
 }
 
+.header__page-name:hover,
+.header__page-name:focus {
+  color: var(--accent-yellow);
+}
+
 .page__home {
   margin-right: 40px;
   margin-left: 112px;
@@ -121,4 +127,16 @@
   @media screen and (min-width: 1280px) {
     margin-right: 16px;
   }
+}
+
+.active {
+  background-color: var(--accent-yellow);
+  border: none;
+  box-shadow: 0 8px 43px 0 rgba(255, 107, 1, 0.6);
+}
+
+.empty-list-text {
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 30px;
 }
