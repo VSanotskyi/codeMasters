@@ -9,33 +9,44 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
   
-  <script type="module" crossorigin src="/codeMasters/assets/modulepreload-polyfill-3cfb730f.js"></script>
-  <link rel="stylesheet" href="/codeMasters/assets/my-library-d1079e42.css">
+  <script type="module" crossorigin src="/codeMasters/commonHelpers2.js"></script>
+  <link rel="modulepreload" crossorigin href="/codeMasters/assets/vendor-cab2c1cb.js">
+  <link rel="modulepreload" crossorigin href="/codeMasters/assets/btnScrollUp-6bdf0ba9.js">
+  <link rel="stylesheet" href="/codeMasters/assets/my-library-aa7a3e12.css">
 </head>
 
 <body>
   <header class="header">
   <div class="header__container">
     <div class="header__nav-container">
-      <a href="./">
       <svg class="header-icon" width="24px" height="24px">
         <use href="/codeMasters/assets/symbol-defs-77600034.svg#icon-film"></use>
       </svg>
+      <a href="./">
+        <span class="header__page-name">Filmoteka</span>
       </a>
-      <span class="header__page-name">Filmoteka</span>
       <a href="./" class="page__home nav-link">Home</a>
       <a href="./my-library.html" class="nav-link page__my-library current">My library</a>
     </div>
     <div class="header__button-container">
-      <button class="header-button">WATCHED</button>
-      <button class="header-button">QUEUE</button>
+      <button class="header-button js-watched">WATCHED</button>
+      <button class="header-button js-queue">QUEUE</button>
     </div>
   </div>
 </header>
   <section class="container">
-    ENOENT: no such file or directory, open '/home/runner/work/codeMasters/codeMasters/src/partials/home.html'
+    <div class="movie-container">
+  <ul class="movies-list">
+  </ul>
+</div>
+    <div id="pagination-container"></div>
   </section>
-  <div id="pagination-container"></div>
+  <footer class="footer">
+  <div class="footer-container">
+    <p class="footer-text"><span>&#169;</span> 2020 | All Rights Reserved Developed with by GOIT Students</p>
+  </div>
+</footer>
+
   <div class="backdrop is-hidden">
   <div class="modal">
     <div class="modal-wrapper"></div>
@@ -57,7 +68,7 @@
 
 
 
-  <script type="module" src=""></script>
+  
 </body>
 
 </html>
