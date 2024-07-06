@@ -75,9 +75,7 @@ const handleClickWatchedQueue = (movieId) => {
       btnWatchedEl.textContent = 'Remove from watched';
     }
 
-    console.log(location.pathname)
-
-    if (location.pathname === "/my-library.html") {
+    if (location.pathname === "/codeMasters/my-library.html") {
       const watchedBtn = document.querySelector('.js-watched');
       if (watchedBtn.classList.contains('active')) {
         const moviesArr = await helpers.MoviesList(watchedIds, moviesService.getMovieById);
