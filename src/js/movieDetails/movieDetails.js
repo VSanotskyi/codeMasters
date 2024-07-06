@@ -112,10 +112,10 @@ const handleClickWatchedQueue = (movieId) => {
 const checkWatchedQueue = (htmlEl, movieIds, movieId, message) => {
   if (movieIds.includes(movieId)) {
     htmlEl.classList.add('active');
-    htmlEl.textContent = `Remove to ${message}`;
+    htmlEl.textContent = `Remove from ${message}`;
   } else {
     htmlEl.classList.remove('active')
-    htmlEl.textContent = `Add from ${message}`;
+    htmlEl.textContent = `Add to ${message}`;
   }
 }
 
