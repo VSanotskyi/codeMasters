@@ -5,6 +5,7 @@ const moviesEndPoint = '/discover/movie';
 const genreEndPoint = '/genre/movie/list';
 const searchEndPoint = '/search/movie';
 const movieDetailsEndPoint = '/movie';
+const movieByIdEndPoint = '/movie';
 
 export default {
   baseURL,
@@ -14,4 +15,5 @@ export default {
   genreEndPoint,
   searchEndPoint,
   movieDetailsEndPoint,
+  movieByIdEndPoint,
 };

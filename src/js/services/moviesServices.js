@@ -27,9 +27,16 @@ const getMovieDetails = async movieId => {
   return data;
 };
 
+const getMovieById = async (movieId) => {
+  const {data } = await apiService(`${urls.movieByIdEndPoint}/${movieId}`);
+
+  return data;
+}
+
 export default {
   getAllMovies,
   getGenres,
   getMovieByKeyword,
   getMovieDetails,
+  getMovieById,
 };
