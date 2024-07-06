@@ -97,7 +97,7 @@ const handleClickWatchedQueue = (movieId) => {
       btnQueueEl.textContent = 'Remove from queue';
     }
 
-    if (location.pathname === "/my-library.html") {
+    if (location.pathname === "/codeMasters/my-library.html") {
       const queuedBtn = document.querySelector('.js-queue');
       if (queuedBtn.classList.contains('active')) {
         const moviesArr = await helpers.MoviesList(queueIds, moviesService.getMovieById);
