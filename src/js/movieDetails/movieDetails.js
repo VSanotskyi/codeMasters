@@ -75,6 +75,8 @@ const handleClickWatchedQueue = (movieId) => {
       btnWatchedEl.textContent = 'Remove from watched';
     }
 
+    console.log(location.pathname)
+
     if (location.pathname === "/my-library.html") {
       const watchedBtn = document.querySelector('.js-watched');
       if (watchedBtn.classList.contains('active')) {
